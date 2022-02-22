@@ -1,88 +1,39 @@
 <template>
   <main>
-      <section id="subject-fields" class="container">
-          <div class="row">
-            <div v-for="card in cards" :key="card.id" class="col-2">
-                <Card :item="card" />
-            </div>
-      </div>
-      </section>
-      <section id="tutoring" class="container">
-          <h3>The Trusted Name 
-              <br>
-                for In-Home Tutoring</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur distinctio deleniti maiores rem neque dolore sit! Officiis distinctio, perferendis inventore architecto perspiciatis, earum commodi consectetur natus maxime voluptate quam. Minima?</p>
-          <a href="#">LEARN MORE</a>
-          <figure>
-              <img src="../assets/img/h5-img-1.jpg" class="img-fluid w-100" alt="tutoring">
-          </figure>
-      </section>
-      <section id="reviews">
-          <div class="container">
-              <div class="row">
-                <div class="col-6">
-                    <!-- section image -->
-                    <figure>
-                        <img src="../assets/img/h5-img-2.jpg" class="img-fluid" alt="">
-                    </figure>
-                </div>
-                <div class="col-6">
-                    <!-- Section title -->
-                    <h2>Empowering Children to Reach Their Potential</h2>
-                    <!-- Section text -->
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, officia cumque adipisci ex eligendi porro doloribus! Facilis ratione sunt, obcaecati commodi excepturi odio, aut id quaerat, sequi iste laborum eveniet?</p>
-                    <!-- Counter -->
-                    <div id="review-counter">
-                        <div class="slider">
-                            <div>
-                                <div>168</div>
-                                <span>User Stories</span>
-                            </div>
-                            <div>
-                                    <div>347</div>
-                                    <span>Events</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-          <div class="slider">
-              <div class="slider-content text-center">
-                    <!-- img -->
-                    <img src="../assets/img/instructor-img-6.jpg" alt="" class="rounded-circle">
-                    <!-- text -->
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo non illo voluptatibus nulla, animi, cupiditate libero perferendis eligendi tempore asperiores cum. Nobis, nesciunt consequatur cumque earum asperiores illum atque ea."</p>
-                    <!-- name -->
-                    <h6>Joan Collins</h6>
-                    <!-- role -->
-                    <span>Student</span>
-              </div>
-          </div>
-      </section>
+      <SubjectFields :cards="cards" />
+      <Tutoring />
+      <Reviews />
       <FocalPoints :focal-points="focalPoints" />
+      <PopularCourses :online-courses="onlineCourses"/>
+      <PricingPlans :options="options"/>
+      <Clients :clients="clients"/>
   </main>
 </template>
 
 <script>
 
-import Card from "./Card.vue"
+import SubjectFields from "./sections/SubjectFields.vue"
+import Tutoring from "./sections/Tutoring.vue"
+import Reviews from "./sections/Reviews.vue"
 import FocalPoints from "./sections/FocalPoints.vue"
+import PopularCourses from "./sections/PopularCourses.vue"
+import PricingPlans from "./sections/PricingPlans.vue"
+import Clients from "./sections/Clients.vue"
 
 export default {
     name:"Main",
     components: {
-        Card,FocalPoints,
+        SubjectFields, Tutoring, Reviews, FocalPoints, PopularCourses, PricingPlans, Clients,
     },
     data() {
         return {
             cards: [
-                {name:"Languages", url:"h5-custom-icon-1.png", id:1},
-                {name:"Software", url:"h5-custom-icon-2.png", id:2},
-                {name:"Business", url:"h5-custom-icon-3.png", id:3},
-                {name:"Chemistry", url:"h5-custom-icon-4.png", id:4},
-                {name:"Science", url:"h5-custom-icon-5.png", id:5},
-                {name:"DIY&Craft", url:"h5-custom-icon-6.png", id:6},
+                {name:"Languages", imageUrl:"h5-custom-icon-1.png", id:1},
+                {name:"Software", imageUrl:"h5-custom-icon-2.png", id:2},
+                {name:"Business", imageUrl:"h5-custom-icon-3.png", id:3},
+                {name:"Chemistry", imageUrl:"h5-custom-icon-4.png", id:4},
+                {name:"Science", imageUrl:"h5-custom-icon-5.png", id:5},
+                {name:"DIY&Craft", imageUrl:"h5-custom-icon-6.png", id:6},
             ],
             focalPoints: [
                 {text: "What We Do", url: "#", active: false},
@@ -91,7 +42,28 @@ export default {
                 {text: "Personal Managment", url: "#", active: false},
                 {text: "Steps To Success", url: "#", active: false},
                 {text: "Knowledge Transfer", url: "#", active: false}
-            ]
+            ],
+            onlineCourses: [
+                {name:"Android Developer", url:"#", imageUrl:"course-5-f-img.jpg", teacher:"David Sanders", cost:"FREE", description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi aliquid non, sed nesciunt amet.", tutors:1, field:"programming" },
+                {name:"Web Designing", url:"#", imageUrl:"course-6-f-img.jpg", teacher:"Jennifer Powell", cost:"FREE", description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi aliquid non, sed nesciunt amet.", tutors:1, field:"PROGRAMMING" },
+                {name:"Financial Modeling", url:"#", imageUrl:"course-7-f-img.jpg", teacher:"Edward Bowman", cost:"$20", description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi aliquid non, sed nesciunt amet.", tutors:1, field:"BUSINESS" },
+            ],
+            clients: [
+                {name:"iAcademy", url:"#", imageUrl:"h5-client-5.png"},
+                {name:"Study Central", url:"#", imageUrl:"h5-client-1.png"},
+                {name:"Educator", url:"#", imageUrl:"h5-client-2.png"},
+                {name:"Study Central", url:"#", imageUrl:"h5-client-1.png"},
+            ],
+            options: [
+                { description:"Number of Courses", standard:"2", professional:"4", advanced:"6"},
+                { description:"Time", standard:"15 Days", professional:"30 Days", advanced:"30 Days"},
+                { description:"Web Designing", standard:true, professional:true, advanced:true },
+                { description:"Human Centerd Design", standard:true, professional:true, advanced:true },
+                { description:"Basic Marketing", standard:false, professional:true, advanced:true },
+                { description:"Python for Everybody", standard:false, professional:true, advanced:true} ,
+                { description:"Android Developer", standard:false, professional:false, advanced:true },
+                { description:"Business English", standard:false, professional:false, advanced:true }
+            ],
 
         }
     }
@@ -99,7 +71,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    .slider {
-        background-image: url("../assets/img/h5-parallax-img-1.png");
-    }
+
 </style>

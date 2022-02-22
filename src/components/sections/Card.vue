@@ -1,6 +1,6 @@
 <template>
   <div class="cards">
-      <img :src="getImageUrl(item.url)" alt="field" class="img-fluid">
+      <img :src="getImageUrl(item.imageUrl)" alt="field" class="img-fluid">
       <h6>{{item.name}}</h6>
   </div>
 </template>
@@ -11,7 +11,7 @@ export default {
     props: ["item"],
     methods: {
         getImageUrl(imageUrl) {
-            return require(`../assets/img/${imageUrl}`);
+            return require(`../../assets/img/${imageUrl}`);
         
         }
     }

@@ -42,15 +42,15 @@ export default {
             border-left:6px solid transparent;
             margin-top: -1px;
             padding: 15px;
-            color: #ABABAB;
+            color: $t-color-d-gray;
 
-            a{
-            font-weight: 600;
-            font-size: 1rem;
+                a{
+                font-weight: 600;
+                font-size: 1rem;
 
-            &:hover {
-                color: inherit;
-            }
+                &:hover {
+                    color: inherit;
+                }
             }
 
             &.active {
