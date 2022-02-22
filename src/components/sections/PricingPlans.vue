@@ -3,7 +3,7 @@
       <!-- section title -->
       <h2>Pricing Plans</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptatibus quos quidem commodi.</p>
-      <Table :options="options"/>
+      <Table :options="options" :plans="plans"/>
   </section>
 </template>
 
@@ -12,7 +12,7 @@ import Table from "./Table.vue"
 
 export default {
     name:"Pricing Plans",
-    props: ["options"],
+    props: ["options", "plans"],
     components: {
         Table,
     }

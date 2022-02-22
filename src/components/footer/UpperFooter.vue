@@ -1,4 +1,4 @@
-o<template>
+<template>
   <div class="upper-footer container">
       <!-- Footer Menu -->
       <div class="row">
@@ -10,8 +10,10 @@ o<template>
                       <a href="#"><img src="../../assets/img/footer-logo-1.png" alt="#" class="img-fluid"></a>
                       <p>Providing Life Changing Experiences Through Education. Class That Fit Your Busy Life. Closer to Home</p>
                       <!-- contacts -->
-                      <span><i class="fa-solid fa-phone"></i> 1-677-124-44227</span>
-                      <span><i class="fa-regular fa-clock"></i>Mon - Sat 8.00 - 18.00</span>
+                      <div class="d-flex flex-column text-white">
+                          <span><i class="fa-solid fa-phone"></i> 1-677-124-44227</span>
+                            <span><i class="fa-regular fa-clock"></i>Mon - Sat 8.00 - 18.00</span>
+                      </div>
                   </div>
                 <!-- COURSES -->
                   <div class="col-4">
@@ -63,9 +65,32 @@ name: "Upper Footer",
 </script>
 
 <style scoped lang="scss">
-    a {
-        &:hover {
-            color: inherit;
+
+    @import "../../assets/sass/_vars.scss";
+
+    .upper-footer {
+        color:$t-color-off-white;
+        padding: 40px 0;
+    }
+
+    ul {
+        padding:0;
+
+        li {
+            margin-bottom: 15px;
         }
+    }
+
+    h4 {
+        color: white;
+    }
+
+    h6 {
+        color: $t-color-off-white;
+    }
+
+    p {
+        font-weight: 100;
+        margin: 15px 0;
     }
 </style>

@@ -6,7 +6,7 @@
       <StudentSpotlight />
       <FocalPoints :focal-points="focalPoints" />
       <PopularCourses :online-courses="onlineCourses"/>
-      <PricingPlans :options="options"/>
+      <PricingPlans :options="options" :plans="plans"/>
       <Clients :clients="clients"/>
   </main>
 </template>
@@ -46,9 +46,9 @@ export default {
                 {text: "Knowledge Transfer", url: "#", active: false}
             ],
             onlineCourses: [
-                {name:"Android Developer", url:"#", imageUrl:"course-5-f-img.jpg", teacher:"David Sanders", cost:"FREE", description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi aliquid non, sed nesciunt amet.", tutors:1, field:"programming" },
-                {name:"Web Designing", url:"#", imageUrl:"course-6-f-img.jpg", teacher:"Jennifer Powell", cost:"FREE", description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi aliquid non, sed nesciunt amet.", tutors:1, field:"PROGRAMMING" },
-                {name:"Financial Modeling", url:"#", imageUrl:"course-7-f-img.jpg", teacher:"Edward Bowman", cost:"$20", description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi aliquid non, sed nesciunt amet.", tutors:1, field:"BUSINESS" },
+                {name:"Android Developer", url:"#", imageUrl:"course-5-f-img.jpg", teacher:"David Sanders", free: true, cost:"FREE", description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi aliquid non, sed nesciunt amet.", tutors:1, field:"PROGRAMMING" },
+                {name:"Web Designing", url:"#", imageUrl:"course-6-f-img.jpg", teacher:"Jennifer Powell", free: true, cost:"FREE", description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi aliquid non, sed nesciunt amet.", tutors:1, field:"PROGRAMMING" },
+                {name:"Financial Modeling", url:"#", imageUrl:"course-7-f-img.jpg", teacher:"Edward Bowman", free: false, cost:"$20", description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi aliquid non, sed nesciunt amet.", tutors:1, field:"BUSINESS" },
             ],
             clients: [
                 {name:"iAcademy", url:"#", imageUrl:"h5-client-5.png"},
@@ -56,11 +56,16 @@ export default {
                 {name:"Educator", url:"#", imageUrl:"h5-client-2.png"},
                 {name:"Study Central", url:"#", imageUrl:"h5-client-1.png"},
             ],
+            plans: [
+                {name: "Standard", url:"#", imageUrl:"h5-custom-icon-7.png", price:"$12"},
+                {name: "Professional", url:"#", imageUrl:"h5-custom-icon-8.png", price:"$59"},
+                {name: "Advanced", url:"#", imageUrl:"h5-custom-icon-9.png", price:"$88"},
+            ],
             options: [
                 { description:"Number of Courses", standard:"2", professional:"4", advanced:"6"},
                 { description:"Time", standard:"15 Days", professional:"30 Days", advanced:"30 Days"},
                 { description:"Web Designing", standard:true, professional:true, advanced:true },
-                { description:"Human Centerd Design", standard:true, professional:true, advanced:true },
+                { description:"Human Centered Design", standard:true, professional:true, advanced:true },
                 { description:"Basic Marketing", standard:false, professional:true, advanced:true },
                 { description:"Python for Everybody", standard:false, professional:true, advanced:true} ,
                 { description:"Android Developer", standard:false, professional:false, advanced:true },

@@ -2,7 +2,7 @@
   <section class="focal-points">
           <div class="container">
               <div class="row">
-                  <div class="col-3 h-100">
+                  <div class="col-3">
                       <!-- Navbar -->
                       <VerticalNavbar :links="focalPoints" />
                   </div>
@@ -19,7 +19,7 @@
                                 <li>The trusted name for specialized training.</li>
                                 <li>People teach. People learn. This is were they connect.</li>
                             </ul>
-                            <img src="../../assets/img/h12-tabs-icon-1.png" alt="" class="w-25">
+                            <img src="../../assets/img/h12-tabs-icon-1.png" class="img-fluid">
                        </div>
                   </div>
               </div>
@@ -45,12 +45,29 @@ export default {
 
 @import "../../assets/sass/_vars.scss";
 
+.col-3 {
+    padding-right: 40px;
+}
+
 .focal-points {
+
+    color: $t-color-gray;
+
+    p {
+        margin: 30px 0;
+    }
+
+    img {
+        width: 120px;
+    }
+
     ul{
         padding: 0;
 
         li{
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            
 
             &::before {
                 content: '\2713';

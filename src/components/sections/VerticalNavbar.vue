@@ -36,17 +36,18 @@ export default {
 
         li {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             list-style-type: none;
             border-bottom: 1px solid $b-color-l-grey;
             border-left:6px solid transparent;
             margin-top: -1px;
             padding: 15px;
             color: $t-color-d-gray;
+            flex-grow: 1;
 
                 a{
                 font-weight: 600;
-                font-size: 1rem;
+                font-family: $main-font;
 
                 &:hover {
                     color: inherit;

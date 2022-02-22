@@ -18,12 +18,12 @@
                     <div id="review-counter">
                         <div class="counter">
                             <div>
-                                <a href="#"><h3>168</h3></a>
-                                <a href="#"><h6>User Stories</h6></a>
+                                <a href="#"><span>168</span></a>
+                                <a href="#"><span>User Stories</span></a>
                             </div>
                             <div>
-                                <a href="#"><h3>347</h3></a>
-                                <a href="#"><h6>Events</h6></a>
+                                <a href="#"><span>347</span></a>
+                                <a href="#"><span>Events</span></a>
                             </div>
                         </div>
                     </div>
@@ -70,16 +70,15 @@ export default {
             font-weight: 500;
             margin-right: 120px;
             
-            h3{
-                font-size: 4rem;
-            }
-            
-            h6 {
-                font-size: 1.1rem;
-            }
-            
         }
     }
 
+    a:first-child {
+        font-size: 4rem;
+    }
+    
+    a:last-child {
+        font-size: 1.1rem;
+    }
      
 </style>

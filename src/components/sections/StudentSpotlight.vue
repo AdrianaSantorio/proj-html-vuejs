@@ -44,6 +44,10 @@ export default {
         margin: 30px auto;
     }
 
+    h4 {
+        color: white;
+    }
+
     p {
         font-size:1.3rem;
         font-weight: 300;

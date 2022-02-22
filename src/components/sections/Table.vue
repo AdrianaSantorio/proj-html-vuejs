@@ -1,10 +1,11 @@
 <template>
   <table class="table-bordered w-100">
       <thead>
-          <th>Save up to 40% by paying weekly</th>
-          <th>Standard</th>
-          <th>Professional</th>
-          <th>Advanced</th>
+          <th><h4>Save up to 40% by paying weekly</h4></th>
+          <th v-for="plan, index in plans" :key="index">
+              <img src="" alt="" class="img-fluid">
+              <h4>{{plan.name}}</h4>
+            </th>
       </thead>
         <tbody>
             <tr v-for="option in options" :key="option.name">
@@ -25,7 +26,7 @@
 <script>
 export default {
     name:"table",
-    props: ["options"],
+    props: ["options","plans"],
     methods: {
       getCellValue(value) {
           if (value === false) {
@@ -52,6 +53,10 @@ export default {
 <style scoped lang="scss">
 
 @import "../../assets/sass/_vars.scss";
+
+    table {
+        color: $t-color-gray;
+    }
 
     td {
         padding:15px;
