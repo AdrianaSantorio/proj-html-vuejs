@@ -3,6 +3,7 @@
       <SubjectFields :cards="cards" />
       <Tutoring />
       <Reviews />
+      <StudentSpotlight />
       <FocalPoints :focal-points="focalPoints" />
       <PopularCourses :online-courses="onlineCourses"/>
       <PricingPlans :options="options"/>
@@ -15,6 +16,7 @@
 import SubjectFields from "./sections/SubjectFields.vue"
 import Tutoring from "./sections/Tutoring.vue"
 import Reviews from "./sections/Reviews.vue"
+import StudentSpotlight from "./sections/StudentSpotlight.vue"
 import FocalPoints from "./sections/FocalPoints.vue"
 import PopularCourses from "./sections/PopularCourses.vue"
 import PricingPlans from "./sections/PricingPlans.vue"
@@ -23,7 +25,7 @@ import Clients from "./sections/Clients.vue"
 export default {
     name:"Main",
     components: {
-        SubjectFields, Tutoring, Reviews, FocalPoints, PopularCourses, PricingPlans, Clients,
+        SubjectFields, Tutoring, Reviews,StudentSpotlight, FocalPoints, PopularCourses, PricingPlans, Clients,
     },
     data() {
         return {

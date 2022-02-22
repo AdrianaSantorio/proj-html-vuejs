@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import UpperHeader from "./UpperHeader.vue"
-import Button from "./Button.vue"
+import UpperHeader from "./header/UpperHeader.vue"
+import Button from ".//Button.vue"
 export default {
     name: "Header",
     components: {

@@ -1,7 +1,7 @@
 <template>
   <div class="cards">
-      <img :src="getImageUrl(item.imageUrl)" alt="field" class="img-fluid">
-      <h6>{{item.name}}</h6>
+      <a href="#"><img :src="getImageUrl(item.imageUrl)" alt="field" class="img-fluid"></a>
+      <a href="#"><h6>{{item.name}}</h6></a>
   </div>
 </template>
 
@@ -20,11 +20,18 @@ export default {
 </script>
 
 <style scoped lang="scss">
+    @import "../../assets/sass/_vars.scss";
+
     .cards {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: #F2F8FC;
+        background-color: $bg-color-gray-cards;
+        padding: 50px;
+         h6 {
+             font-size: 1.1rem;
+             margin-top: 1.6rem;
+         }
     }
 </style>
